@@ -1,0 +1,24 @@
+# AI Gym requirements
+PyOpenGL
+piglet
+pyglet
+
+# Other
+JSAnimation
+ipywidgets
+
+#GYM ALL
+gym
+
+gym[atari]
+gym[box2d]
+gym[classic_control]
+
+# TINA
+pymongo
+xlwt
+seaborn
+requests
+sklearn
+xlrd
+
