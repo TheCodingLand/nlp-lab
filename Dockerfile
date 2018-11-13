@@ -11,18 +11,18 @@ ENV JUPYTER_ENABLE_LAB yes
 
 RUN apt update
 RUN apt install curl -y
-#RUN curl -O https://repo.anaconda.com/archive/Anaconda3-5.3.0-Linux-x86_64.sh
 
 ENV DEBIAN_FRONTEND noninteractive
 
 # Ubuntu packages + Numpy
 RUN apt-get update && apt-get install -y python3-pip curl unzip \
     libosmesa-dev libglew-dev patchelf libglfw3-dev
-    
-RUN curl https://www.roboti.us/download/mjpro150_linux.zip --output /tmp/mujoco.zip && \
-    mkdir -p /root/.mujoco && \
-    unzip /tmp/mujoco.zip -d /home/jovyan/.mujoco && \
-    rm -f /tmp/mujoco.zip
+
+#Uncomment if you need mujoco for openai, also, you will need to add stuff for the licence. (i didnt bother)
+#RUN curl https://www.roboti.us/download/mjpro150_linux.zip --output /tmp/mujoco.zip && \
+#    mkdir -p /root/.mujoco && \
+#    unzip /tmp/mujoco.zip -d /home/jovyan/.mujoco && \
+#    rm -f /tmp/mujoco.zip
 ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/home/jovyan/.mujoco/mjpro150/bin
 
 # Upgrade pip
