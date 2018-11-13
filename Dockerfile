@@ -50,6 +50,7 @@ RUN git clone https://github.com/facebookresearch/fastText.git
 WORKDIR /home/jovyan/install/fastText
 RUN python setup.py install
 
-RUN pip3 install flask
+#flask is useful to start API entry points and serve computed data as tests for external app sources
+#RUN pip3 install flask
 
 WORKDIR /home/jovyan/work
